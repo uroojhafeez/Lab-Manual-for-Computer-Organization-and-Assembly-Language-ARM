@@ -1,0 +1,148 @@
+[13/12, 10:53 pm] Meta AI: Here are the answers to the experiments and assessment questions:
+
+Experiment 1: Understanding ARM Architecture
+Code Files
+Not applicable, as this experiment involves researching and drawing the ARM processor architecture.
+
+Report
+The ARM processor architecture consists of several key components, including:
+
+Experiment 2: Basic Assembly Instructions
+Code Files
+
+arm
+; Load and store data using LDR and STR
+MOV r0, #10      ; load 10 into r0
+LDR r1, =data     ; load address of data into r1
+STR r0, [r1]      ; store r0 into memory location pointed to by r1
+
+; Basic arithmetic operations using ADD and SUB
+MOV r0, #5        ; load 5 into r0
+MOV r1, #3        ; load 3 into r1
+ADD r2, r0, r1    ; add r0 and r1, store result in r2
+SUB r3, r0, r1    ; subtract r1 from r0, store result in r3
+
+data DCD 0          ; define data location
+
+
+Report
+In this experiment, we learned how to use basic assembly instructions to load and store data, as well as perform arithmetic operations.
+
+Experiment 3: Conditional Execution
+Code Files
+
+arm
+; Compare two numbers and output the larger number
+MOV r0, #5        ; load 5 into r0
+MOV r1, #3        ; load 3 into r1
+CMP r0, r1        ; compare r0 and r1
+BLE larger         ; if r0 <= r1, branch to larger
+MOV r2, r0        ; else, move r0 into r2
+B end               ; branch to end
+larger
+MOV r2, r1        ; move r1 into r2
+end
+MOV r0, r2        ; move r2 into r0 (output)
+
+
+Report
+In this experiment, we learned how to use conditional execution in ARM assembly.
+
+Experiment 4: Loops in Assembly
+Code Files
+
+arm
+; Calculate the sum of the first N natural numbers
+MOV r0, #5        ; load 5 into r0 (N)
+MOV r1, #0        ; load 0 into r1 (sum)
+loop
+ADD r1, r1, r0    ; add r0 to r1
+SUB r0, r0, #1    ; subtract 1 from r0
+CMP r0, #0        ; compare r0 to 0
+BNE loop           ; if r0 != 0, branch to loop
+MOV r0, r1        ; move r1 into r0 (output)
+
+
+Report
+In this experiment, we learned how to use loops in ARM assembly.
+
+Experiment 5: Arrays in Assembly
+Code Files
+
+arm
+; Find the maximum value in an array
+MOV r0, #5        ; load 5 into r0 (array size)
+MOV r1, #0        ; load 0 into r1 (max value)
+LDR r2, =array     ; load address of array into r2
+loop
+LDR r3, [r2]      ; load value from array into r3
+CMP r3, r1        ; compare r3 to r1
+BLE next           ; if r3 <= r1, branch to next
+MOV r1, r3        ; else, move r3 into r1
+next
+ADD r2, r2, #4    ; add 4 to r2 (move to next element)
+SUB r0, r0, #1    ; subtract 1 from r0
+CMP r0, #0        ; compare r0 to 0
+BNE loop           ; if r0 != 0, branch to loop
+MOV r0, r1        ; move r1 into r0 (output)
+
+array DCD 1, 2, 3, 4, 5
+
+
+Report
+In this experiment, we learned how to work with arrays in ARM assembly.
+
+Assessment Questions
+
+1. Describe the difference between RISC and CISC architectures.
+RISC (Reduced Instruction Set Computing) architectures use a simplified instruction set, with fewer and more general-purpose instructions. CISC (Complex Instruction Set Computing) architectures, on the other hand, use a more complex instruction set, with more specialized instructions.
+
+2. Explain the role of the program counter (PC) in ARM architecture.
+The program counter (PC) is a register that keeps track of the current instruction being executed. It holds the memory address of the next instruction to be fetched.
+
+3. What is the significance of condition codes in ARM assembly?
+Condition codes are used to control the flow of a program based on
+[13/12, 10:54 pm] Meta AI: Here are the remaining answers:
+
+4. How does the ARM pipeline improve performance?
+The ARM pipeline improves performance by breaking down the instruction execution process into a series of stages, allowing for more efficient use of resources and improved instruction-level parallelism.
+
+5. Compare direct and indirect addressing modes in ARM assembly.
+Direct addressing mode uses a register to hold the memory address, while indirect addressing mode uses a register to hold a pointer to the memory address.
+
+6. What is the difference between LDR and LDM instructions?
+LDR (Load Register) loads a single value from memory into a register, while LDM (Load Multiple Registers) loads multiple values from memory into multiple registers.
+
+7. Explain the use of the stack pointer (SP) in subroutine calls.
+The stack pointer (SP) is used to keep track of the current location in memory where subroutine calls are stored.
+
+8. How are interrupts handled in ARM architecture?
+Interrupts are handled in ARM architecture through the use of interrupt handlers, which are special routines that handle interrupt requests.
+
+9. What are the advantages of using thumb instructions in ARM?
+Thumb instructions are 16-bit instructions that provide improved code density, reduced memory usage, and improved performance.
+
+10. Write a code snippet for swapping two numbers without using a third variable.
+
+arm
+MOV r0, #5        ; load 5 into r0
+MOV r1, #3        ; load 3 into r1
+EOR r0, r0, r1    ; swap r0 and r1 using XOR
+EOR r1, r0, r1    ; swap r0 and r1 using XOR
+EOR r0, r0, r1    ; swap r0 and r1 using XOR
+
+
+11. Define the term "endianess" and its impact on memory storage in ARM.
+Endianess refers to the order in which bytes are stored in memory. ARM processors can operate in both big-endian and little-endian modes.
+
+12. How does the barrel shifter in ARM instructions work?
+The barrel shifter is a hardware component that performs bit-level operations, such as shifting and rotating, on operands.
+
+13. Why is pipelining important in ARM processors?
+Pipelining is important in ARM processors because it allows for more efficient use of resources, improved instruction-level parallelism, and increased performance.
+
+14. Explain how floating-point operations differ from integer operations.
+Floating-point operations involve performing mathematical operations on floating-point numbers, which have a fractional component. Integer operations, on the other hand, involve performing mathematical operations on integers.
+
+15. What are the advantages of inline assembly in ARM-based C programming?
+Inline assembly allows developers to write assembly code directly in their C programs, providing low-level access to hardware resources and improved performance.
